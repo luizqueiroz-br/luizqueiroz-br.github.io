@@ -1,1 +1,66 @@
-Ola mundo
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Página em Construção</title>
+    <style>
+        body {
+            background-color: #000;
+            color: #FFA500;
+            font-family: 'Arial', sans-serif;
+            text-align: center;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+            margin: 0;
+        }
+
+        h1 {
+            font-size: 2em;
+            margin-bottom: 20px;
+        }
+
+        #construction {
+            font-size: 1.5em;
+            font-weight: bold;
+            letter-spacing: 2px;
+            padding: 10px;
+            border: 2px solid #FFA500;
+            border-radius: 5px;
+            animation: pulse 1s infinite;
+        }
+
+        @keyframes pulse {
+            0%, 100% {
+                transform: scale(1);
+            }
+            50% {
+                transform: scale(1.1);
+            }
+        }
+
+        #construction:hover {
+            animation: none;
+            transform: rotate(360deg);
+            transition: transform 1s ease-in-out;
+        }
+    </style>
+</head>
+<body>
+    <div>
+        <h1>Página em Construção</h1>
+        <div id="construction" onclick="shakeElement(this)">Em breve estaremos de volta!</div>
+    </div>
+
+    <script>
+        function shakeElement(element) {
+            element.style.animation = 'shake 0.5s';
+            setTimeout(() => {
+                element.style.animation = '';
+            }, 500);
+        }
+    </script>
+</body>
+</html>

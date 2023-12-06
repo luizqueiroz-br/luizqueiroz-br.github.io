@@ -3,64 +3,49 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Página em Construção</title>
+    <title>PC Antigo - Novo Blog em Breve</title>
     <style>
         body {
             background-color: #000;
             color: #FFA500;
-            font-family: 'Arial', sans-serif;
+            font-family: 'Courier New', monospace;
             text-align: center;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            height: 100vh;
+            padding: 50px;
             margin: 0;
         }
-
+        
         h1 {
-            font-size: 2em;
+            font-size: 24px;
             margin-bottom: 20px;
         }
 
-        #construction {
-            font-size: 1.5em;
-            font-weight: bold;
-            letter-spacing: 2px;
-            padding: 10px;
-            border: 2px solid #FFA500;
-            border-radius: 5px;
-            animation: pulse 1s infinite;
-        }
-
-        @keyframes pulse {
-            0%, 100% {
-                transform: scale(1);
-            }
-            50% {
-                transform: scale(1.1);
-            }
-        }
-
-        #construction:hover {
-            animation: none;
-            transform: rotate(360deg);
-            transition: transform 1s ease-in-out;
+        #geek-message {
+            font-size: 18px;
         }
     </style>
 </head>
 <body>
-    <div>
-        <h1>Página em Construção</h1>
-        <div id="construction" onclick="shakeElement(this)">Em breve estaremos de volta!</div>
-    </div>
+    <h1>PC Antigo - Novo Blog em Breve</h1>
+    <div id="geek-message">Preparando-se para lançar o blog...</div>
 
     <script>
-        function shakeElement(element) {
-            element.style.animation = 'shake 0.5s';
-            setTimeout(() => {
-                element.style.animation = '';
-            }, 500);
-        }
+        document.addEventListener("DOMContentLoaded", function() {
+            const geekMessage = document.getElementById("geek-message");
+            const messageText = "Em breve um novo blog vai nascer...";
+
+            let index = 0;
+
+            function updateMessage() {
+                geekMessage.textContent = messageText.substring(0, index);
+
+                if (index < messageText.length) {
+                    index++;
+                    setTimeout(updateMessage, 100);
+                }
+            }
+
+            updateMessage();
+        });
     </script>
 </body>
 </html>
